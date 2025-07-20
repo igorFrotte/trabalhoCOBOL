@@ -1,0 +1,32 @@
+       IDENTIFICATION DIVISION.
+       PROGRAM-ID. INITFORN.
+
+       ENVIRONMENT DIVISION.
+       INPUT-OUTPUT SECTION.
+       FILE-CONTROL.
+           SELECT FORNECEDOR-FILE ASSIGN TO "FORNECEDOR.DAT"
+               ORGANIZATION IS INDEXED
+               ACCESS MODE IS DYNAMIC
+               RECORD KEY IS F-CNPJ
+               FILE STATUS IS WS-STATUS.
+
+       DATA DIVISION.
+       FILE SECTION.
+       FD FORNECEDOR-FILE.
+       01 FORNECEDOR-REG.
+           05 F-CNPJ         PIC 9(14).
+           05 F-RAZAO-SOCIAL PIC X(40).
+           05 F-ENDERECO     PIC X(50).
+           05 F-TELEFONE     PIC 9(11).
+           05 F-EMAIL        PIC X(30).
+           05 F-ATIVO        PIC X(1).
+
+       WORKING-STORAGE SECTION.
+       01 WS-STATUS         PIC XX.
+
+       PROCEDURE DIVISION.
+       BEGIN.
+           OPEN OUTPUT FORNECEDOR-FILE
+           CLOSE FORNECEDOR-FILE
+           DISPLAY "Arquivo FORNECEDOR.DAT criado com sucesso."
+           STOP RUN.
