@@ -47,7 +47,7 @@
            PERFORM FIM-RELATORIO
 
            CLOSE CONTAPAGAR-FILE
-           STOP RUN.
+           EXIT PROGRAM.
 
        LER-REGISTROS.
            READ CONTAPAGAR-FILE

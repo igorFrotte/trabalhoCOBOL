@@ -29,6 +29,7 @@
        PROCEDURE DIVISION.
 
        MAIN-PROCEDURE.
+           MOVE "S" TO CONTINUA
            OPEN I-O FORNECEDOR-FILE
            IF WS-STATUS-FILE NOT = "00"
                DISPLAY "Erro ao abrir. Status: " WS-STATUS-FILE
@@ -40,7 +41,7 @@
                DISPLAY "1 - Incluir"
                DISPLAY "2 - Alterar"
                DISPLAY "3 - Excluir (lógica)"
-               DISPLAY "4 - Sair"
+               DISPLAY "4 - Voltar ao Menu Principal"
                ACCEPT OPCAO
 
                EVALUATE OPCAO
@@ -58,7 +59,7 @@
            END-PERFORM
 
            CLOSE FORNECEDOR-FILE
-           STOP RUN.
+           EXIT PROGRAM.
 
        INCLUIR-FORNECEDOR.
            DISPLAY "CNPJ (14 dígitos): " ACCEPT F-CNPJ

@@ -29,6 +29,7 @@
        PROCEDURE DIVISION.
 
        MAIN-PROCEDURE.
+           MOVE "S" TO CONTINUA
            DISPLAY "INÍCIO DA CONSULTA DE FORNECEDOR"
            OPEN INPUT FORNECEDOR-FILE
            IF WS-STATUS-FILE NOT = "00"
@@ -44,7 +45,7 @@
            END-PERFORM
 
            CLOSE FORNECEDOR-FILE
-           STOP RUN.
+           EXIT PROGRAM.
 
        CONSULTAR-FORNECEDOR.
            DISPLAY "CNPJ do Fornecedor (14 dígitos): "

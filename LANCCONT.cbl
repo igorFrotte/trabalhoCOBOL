@@ -51,6 +51,7 @@
        PROCEDURE DIVISION.
 
        MAIN-PROCEDURE.
+           MOVE "S" TO CONTINUA
            DISPLAY "INICIO"
            OPEN I-O FORNECEDOR-FILE
            IF WS-STATUS-FILE-F NOT = "00"
@@ -73,7 +74,7 @@
 
            CLOSE FORNECEDOR-FILE
            CLOSE CONTAPAGAR-FILE
-           STOP RUN.
+           EXIT PROGRAM.
 
        LANCA-CONTA.
            DISPLAY "Número do Documento: "

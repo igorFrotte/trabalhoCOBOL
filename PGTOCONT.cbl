@@ -50,6 +50,7 @@
        PROCEDURE DIVISION.
 
        MAIN-PROCEDURE.
+           MOVE "S" TO CONTINUA
            DISPLAY "INICIO DO PAGAMENTO DE CONTAS"
            OPEN I-O CONTAPAGAR-FILE
            IF WS-STATUS-CONTAS NOT = "00"
@@ -72,7 +73,7 @@
 
            CLOSE CONTAPAGAR-FILE
            CLOSE HISTPAGTO-FILE
-           STOP RUN.
+           EXIT PROGRAM.
 
        EFETUAR-PAGAMENTO.
            DISPLAY "Número do Documento: " ACCEPT CP-NUM-DOC

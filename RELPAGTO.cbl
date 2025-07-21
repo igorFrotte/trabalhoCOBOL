@@ -57,7 +57,7 @@
            PERFORM FIM-RELATORIO
 
            CLOSE HISTPAGTO-FILE
-           STOP RUN.
+           EXIT PROGRAM.
 
        LER-HISTORICO.
            READ HISTPAGTO-FILE
